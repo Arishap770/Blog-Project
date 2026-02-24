@@ -11,280 +11,212 @@
   <title><!-- YOUR BLOG NAME HERE --></title>
 
   <style>
-    /* ─────────────────────────────────────────
-       GLOBAL RESET & BASE STYLES
-    ───────────────────────────────────────── */
-    * {
+
+    /* GENERAL */
+    body {
+      font-family: Georgia, serif;
+      background-color: #f5f2ec;
+      color: #2c2c2c;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
-    body {
-      font-family: 'Georgia', serif;
-      background-color: #f4f1eb;
-      color: #2c2c2c;
-      line-height: 1.7;
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 24px;
     }
 
-    /* ─────────────────────────────────────────
-       HEADER & NAVIGATION
-    ───────────────────────────────────────── */
+    section {
+      margin-bottom: 48px;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      color: #1a3c5e;
+      border-bottom: 2px solid #a8d8ea;
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+    }
+
+    /* HEADER */
     header {
       background-color: #1a3c5e;
       color: #ffffff;
-      padding: 40px 20px 0 20px;
       text-align: center;
+      padding: 36px 20px 0 20px;
     }
 
     header h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
+      font-size: 2.6rem;
+      letter-spacing: 3px;
       text-transform: uppercase;
     }
 
     header p.tagline {
-      font-size: 1.15rem;
       font-style: italic;
       color: #a8d8ea;
-      margin-top: 8px;
-      margin-bottom: 24px;
+      margin: 8px 0 24px 0;
+      font-size: 1.1rem;
     }
 
+    /* NAVIGATION */
     nav {
       background-color: #14304d;
-      padding: 12px 0;
+      padding: 12px;
+      text-align: center;
     }
 
     nav ul {
       list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 6px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin: 0 8px;
     }
 
     nav ul li a {
       color: #ffffff;
       text-decoration: none;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.95rem;
-      letter-spacing: 1px;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
       text-transform: uppercase;
-      padding: 8px 18px;
-      border-radius: 20px;
-      transition: background-color 0.3s, color 0.3s;
+      letter-spacing: 1px;
+      padding: 6px 14px;
+      border: 1px solid transparent;
+      border-radius: 4px;
     }
 
     nav ul li a:hover {
-      background-color: #a8d8ea;
-      color: #1a3c5e;
+      border-color: #a8d8ea;
+      color: #a8d8ea;
     }
 
-    /* ─────────────────────────────────────────
-       MAIN LAYOUT
-    ───────────────────────────────────────── */
-    main {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    /* Shared section title style */
-    section h2 {
-      font-size: 1.9rem;
-      color: #1a3c5e;
-      border-bottom: 3px solid #a8d8ea;
-      padding-bottom: 8px;
-      margin-bottom: 24px;
-    }
-
-    /* ─────────────────────────────────────────
-       INTRODUCTION SECTION
-    ───────────────────────────────────────── */
-    #introduction {
-      background-color: #ffffff;
-      border-radius: 12px;
-      padding: 36px;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    }
-
-    #introduction p {
-      font-size: 1.05rem;
-      color: #444;
-    }
-
-    /* ─────────────────────────────────────────
-       DESTINATIONS SECTION
-    ───────────────────────────────────────── */
-    #destinations {
-      margin-bottom: 40px;
-    }
-
-    .destination-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-
+    /* DESTINATION CARDS */
     article.destination-card {
       background-color: #ffffff;
-      border-radius: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 28px;
       overflow: hidden;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-      display: flex;
-      flex-direction: row;
-    }
-
-    article.destination-card:nth-child(even) {
-      flex-direction: row-reverse;
     }
 
     .card-image-link {
-      flex: 0 0 320px;
       display: block;
     }
 
     .card-image-link img {
       width: 100%;
-      height: 100%;
+      height: 240px;
       object-fit: cover;
       display: block;
-      transition: opacity 0.3s;
-    }
-
-    .card-image-link:hover img {
-      opacity: 0.85;
     }
 
     .card-body {
-      padding: 28px 32px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 20px 24px;
     }
 
     .card-body h3 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: #1a3c5e;
-      margin-bottom: 12px;
+      margin: 0 0 10px 0;
     }
 
     .card-body p {
       color: #555;
-      font-size: 1rem;
+      line-height: 1.7;
+      margin: 0;
     }
 
-    /* ─────────────────────────────────────────
-       TRAVEL TIPS TABLE SECTION
-    ───────────────────────────────────────── */
+    .img-credit {
+      font-size: 0.78rem;
+      color: #999;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* TABLE */
     #travel-tips {
       background-color: #ffffff;
-      border-radius: 12px;
-      padding: 36px;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 28px;
     }
 
-    #travel-tips table {
+    table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 16px;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.95rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      margin-top: 12px;
     }
 
-    #travel-tips caption {
-      font-size: 0.9rem;
+    caption {
       font-style: italic;
       color: #777;
-      margin-bottom: 10px;
       text-align: left;
+      margin-bottom: 8px;
+      font-size: 0.88rem;
     }
 
-    #travel-tips thead {
+    thead {
       background-color: #1a3c5e;
       color: #ffffff;
     }
 
-    #travel-tips thead th {
-      padding: 14px 18px;
+    thead th {
+      padding: 12px 16px;
       text-align: left;
-      letter-spacing: 0.5px;
     }
 
-    #travel-tips tbody tr {
-      border-bottom: 1px solid #e0ddd5;
-      transition: background-color 0.2s;
-    }
-
-    #travel-tips tbody tr:hover {
-      background-color: #eaf6fb;
-    }
-
-    #travel-tips tbody td {
-      padding: 13px 18px;
+    tbody td {
+      padding: 11px 16px;
+      border-bottom: 1px solid #e5e5e5;
       color: #444;
     }
 
-    #travel-tips tfoot {
-      background-color: #f0ede6;
+    tbody tr:hover {
+      background-color: #f0f8fb;
     }
 
-    #travel-tips tfoot td {
-      padding: 12px 18px;
-      font-size: 0.85rem;
-      color: #888;
+    tfoot td {
+      padding: 10px 16px;
       font-style: italic;
+      color: #999;
+      font-size: 0.83rem;
+      background-color: #f9f7f3;
     }
 
-    /* ─────────────────────────────────────────
-       CONTACT FORM SECTION
-    ───────────────────────────────────────── */
+    /* CONTACT FORM */
     #contact {
-      background: linear-gradient(135deg, #1a3c5e 0%, #2e7ca8 100%);
-      border-radius: 16px;
-      padding: 48px 40px;
-      margin-bottom: 40px;
-      box-shadow: 0 6px 20px rgba(26, 60, 94, 0.25);
+      background-color: #1a3c5e;
+      border-radius: 8px;
+      padding: 36px;
     }
 
     #contact h2 {
       color: #ffffff;
-      border-bottom: 3px solid #a8d8ea;
-      font-size: 1.9rem;
-      padding-bottom: 8px;
-      margin-bottom: 10px;
+      border-bottom: 2px solid #a8d8ea;
     }
 
     #contact p.form-intro {
       color: #c8e6f5;
-      margin-bottom: 28px;
-      font-size: 1rem;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      margin-bottom: 24px;
     }
 
     .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .form-group.full-width {
-      grid-column: 1 / -1;
+      margin-bottom: 16px;
     }
 
     .form-group label {
-      font-family: 'Arial', sans-serif;
+      display: block;
+      font-family: Arial, sans-serif;
       font-size: 0.85rem;
       font-weight: bold;
       color: #a8d8ea;
-      letter-spacing: 0.5px;
       text-transform: uppercase;
       margin-bottom: 6px;
     }
@@ -292,75 +224,52 @@
     .form-group input,
     .form-group select,
     .form-group textarea {
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 2px solid rgba(168, 216, 234, 0.4);
-      border-radius: 8px;
-      padding: 12px 16px;
-      color: #ffffff;
-      font-family: 'Georgia', serif;
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #a8d8ea;
+      border-radius: 4px;
+      background-color: #ffffff;
+      color: #2c2c2c;
+      font-family: Georgia, serif;
       font-size: 0.95rem;
-      transition: border-color 0.3s, background-color 0.3s;
-      outline: none;
-    }
-
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: rgba(255, 255, 255, 0.45);
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: #a8d8ea;
-      background-color: rgba(255, 255, 255, 0.18);
-    }
-
-    .form-group select option {
-      background-color: #1a3c5e;
-      color: #ffffff;
     }
 
     .form-group textarea {
+      height: 120px;
       resize: vertical;
-      min-height: 130px;
     }
 
     .form-submit {
-      grid-column: 1 / -1;
       text-align: center;
-      margin-top: 8px;
+      margin-top: 20px;
     }
 
     .form-submit button {
       background-color: #a8d8ea;
       color: #1a3c5e;
       border: none;
-      padding: 14px 48px;
+      padding: 12px 40px;
       font-size: 1rem;
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       font-weight: bold;
-      letter-spacing: 1px;
       text-transform: uppercase;
-      border-radius: 30px;
+      letter-spacing: 1px;
+      border-radius: 4px;
       cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
     }
 
     .form-submit button:hover {
       background-color: #ffffff;
-      transform: translateY(-2px);
     }
 
-    /* ─────────────────────────────────────────
-       FOOTER
-    ───────────────────────────────────────── */
+    /* FOOTER */
     footer {
       background-color: #1a3c5e;
       color: #a8d8ea;
       text-align: center;
-      padding: 28px 20px;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.9rem;
+      padding: 24px 20px;
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
     }
 
     footer p {
@@ -375,6 +284,7 @@
     footer a:hover {
       text-decoration: underline;
     }
+
   </style>
 </head>
 
@@ -392,7 +302,6 @@
 
     <nav>
       <ul>
-        <li><a href="#introduction">Home</a></li>
         <li><a href="#destinations">Destinations</a></li>
         <li><a href="#travel-tips">Travel Tips</a></li>
         <li><a href="#contact">Contact Us</a></li>
@@ -405,43 +314,23 @@
   ============================================================ -->
   <main>
 
-    <!-- ── A. INTRODUCTION SECTION ──────────────────────────────── -->
-    <section id="introduction">
-      <h2>Welcome to My Blog</h2>
-
-      <!-- FILL IN: Write a welcoming introduction paragraph -->
-      <p>
-        <!-- Write a few sentences introducing yourself and your blog.
-             What inspired you to start traveling? What can readers expect? -->
-      </p>
-    </section>
-
-
     <!-- ── B. DESTINATIONS SECTION ──────────────────────────────── -->
     <section id="destinations">
       <h2>My Top Destinations</h2>
 
-      <div class="destination-grid">
-
         <!-- DESTINATION 1 ──────────── -->
         <article class="destination-card">
 
-          <!-- FILL IN: Replace href with a real travel guide URL for this destination -->
-          <a class="card-image-link" href="https://www.example.com" target="_blank" rel="noopener noreferrer">
-            <!-- FILL IN: Replace src with your actual image path/URL
-                         Replace alt with a description of the image -->
-            <img src="" alt="A scenic view of [Destination 1 Name]" />
+          <a class="card-image-link" href="https://www.visit-tlv.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Sarona_CBD_01_%28cropped%29.jpg" alt="The Sarona CBD skyline in Tel Aviv, Israel, showing modern high-rise buildings" />
           </a>
 
           <div class="card-body">
-            <!-- FILL IN: Destination name -->
-            <h3><!-- Destination 1 Name --></h3>
-
-            <!-- FILL IN: Description paragraph -->
+            <h3>Tel Aviv, Israel</h3>
             <p>
-              <!-- Describe this destination: what makes it special, what
-                   there is to see and do, and why a traveler should visit. -->
+              Tel Aviv is a vibrant Mediterranean city that effortlessly blends sandy beaches, world-class architecture, and a buzzing culinary scene with a rich, modern, and youthful culture. From the ancient port of Jaffa to the neon-lit streets of Florentin, every corner tells a story — and every meal is an adventure.
             </p>
+            <p class="img-credit">Photo: <a href="https://en.wikipedia.org/wiki/File:Sarona_CBD_01_(cropped).jpg" target="_blank" rel="noopener noreferrer">Sarona CBD 01 (cropped)</a> by Ynhockey / <a href="https://commons.wikimedia.org/wiki/Main_Page" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> — CC BY-SA 4.0</p>
           </div>
         </article>
 
@@ -449,15 +338,16 @@
         <!-- DESTINATION 2 ──────────── -->
         <article class="destination-card">
 
-          <a class="card-image-link" href="https://www.example.com" target="_blank" rel="noopener noreferrer">
-            <img src="" alt="A scenic view of [Destination 2 Name]" />
+          <a class="card-image-link" href="https://en.parisinfo.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg" alt="The Eiffel Tower seen from the Tour Saint-Jacques in Paris, France" />
           </a>
 
           <div class="card-body">
-            <h3><!-- Destination 2 Name --></h3>
+            <h3>Paris, France</h3>
             <p>
-              <!-- Describe Destination 2 here. -->
+              Immerse yourself in a world-class blend of iconic landmarks like the Eiffel Tower, timeless art at the Louvre, and exquisite culinary experiences — all set against a backdrop of unparalleled romantic and historic European culture. Paris doesn't just meet expectations; it exceeds every single one.
             </p>
+            <p class="img-credit">Photo: <a href="https://en.wikipedia.org/wiki/File:La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques,_Paris_ao%C3%BBt_2014_(2).jpg" target="_blank" rel="noopener noreferrer">La Tour Eiffel vue de la Tour Saint-Jacques</a> by Yann Caradec / <a href="https://commons.wikimedia.org/wiki/Main_Page" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> — CC BY-SA 2.0</p>
           </div>
         </article>
 
@@ -465,25 +355,25 @@
         <!-- DESTINATION 3 ──────────── -->
         <article class="destination-card">
 
-          <a class="card-image-link" href="https://www.example.com" target="_blank" rel="noopener noreferrer">
-            <img src="" alt="A scenic view of [Destination 3 Name]" />
+          <a class="card-image-link" href="https://www.sandiego.org" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/San_Diego_Reflecting_Pond.jpg" alt="Downtown San Diego skyline at night reflected in a still pond, long exposure shot" />
           </a>
 
           <div class="card-body">
-            <h3><!-- Destination 3 Name --></h3>
+            <h3>San Diego, California, USA</h3>
             <p>
-              <!-- Describe Destination 3 here. -->
+              Visit San Diego for its perfect year-round weather, 70 miles of stunning coastline, and world-renowned attractions like the San Diego Zoo and Balboa Park. A laid-back Southern California culture blends rich history with an incredible food scene — making it one of the most livable and lovable cities on earth.
             </p>
+            <p class="img-credit">Photo: <a href="https://en.wikipedia.org/wiki/File:San_Diego_Reflecting_Pond.jpg" target="_blank" rel="noopener noreferrer">San Diego Reflecting Pond</a> by Rufustelestrat / <a href="https://commons.wikimedia.org/wiki/Main_Page" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> — CC BY-SA 3.0</p>
           </div>
         </article>
 
-      </div><!-- /destination-grid -->
     </section>
 
 
     <!-- ── C. TRAVEL TIPS TABLE SECTION ─────────────────────────── -->
     <section id="travel-tips">
-      <h2>Travel Tips at a Glance</h2>
+      <h2>Travel Tips</h2>
 
       <table>
         <!-- FILL IN: Adjust the caption to match your destinations -->
@@ -500,31 +390,28 @@
         </thead>
 
         <tbody>
-          <!-- ROW 1 — FILL IN each cell with info for Destination 1 -->
           <tr>
-            <td><!-- Destination 1 Name --></td>
-            <td><!-- e.g. June – August --></td>
-            <td><!-- e.g. Tacos, Tamales --></td>
-            <td><!-- e.g. The Eiffel Tower --></td>
-            <td><!-- e.g. Book hotels early in peak season --></td>
+            <td>Tel Aviv, Israel</td>
+            <td>April – June &amp; Oct – Nov</td>
+            <td>Hummus, Shakshuka, Falafel, Sabich</td>
+            <td>Carmel Market &amp; Old Jaffa</td>
+            <td>Do a walking food tour of the Florentin neighborhood</td>
           </tr>
 
-          <!-- ROW 2 — FILL IN for Destination 2 -->
           <tr>
-            <td><!-- Destination 2 Name --></td>
-            <td><!-- Best time --></td>
-            <td><!-- Local food --></td>
-            <td><!-- Must-see --></td>
-            <td><!-- Travel tip --></td>
+            <td>Paris, France</td>
+            <td>April – June (Spring)</td>
+            <td>Croissants, Crêpes, French Onion Soup, Macarons</td>
+            <td>The Eiffel Tower &amp; the Louvre Museum</td>
+            <td>Buy a Paris Museum Pass to skip the long lines</td>
           </tr>
 
-          <!-- ROW 3 — FILL IN for Destination 3 -->
           <tr>
-            <td><!-- Destination 3 Name --></td>
-            <td><!-- Best time --></td>
-            <td><!-- Local food --></td>
-            <td><!-- Must-see --></td>
-            <td><!-- Travel tip --></td>
+            <td>San Diego, CA, USA</td>
+            <td>Year-round (best: May – Oct)</td>
+            <td>Mexican Food, Fresh Seafood</td>
+            <td>San Diego Zoo &amp; Balboa Park</td>
+            <td>Rent a bike along the Mission Bay boardwalk</td>
           </tr>
         </tbody>
 
@@ -540,11 +427,10 @@
 
     <!-- ── D. CONTACT FORM SECTION ──────────────────────────────── -->
     <section id="contact">
-      <h2>Contact Us</h2>
+      <h2>Contact Form</h2>
       <p class="form-intro">Leave your questions and messages here!</p>
 
       <form action="#" method="post">
-        <div class="form-grid">
 
           <!-- Name -->
           <div class="form-group">
@@ -563,10 +449,9 @@
             <label for="destination-interest">Destination You're Curious About</label>
             <select id="destination-interest" name="destination-interest">
               <option value="" disabled selected>Select a destination…</option>
-              <!-- FILL IN: Replace these with your three destination names -->
-              <option value="destination1"><!-- Destination 1 Name --></option>
-              <option value="destination2"><!-- Destination 2 Name --></option>
-              <option value="destination3"><!-- Destination 3 Name --></option>
+              <option value="tel-aviv">Tel Aviv, Israel</option>
+              <option value="paris">Paris, France</option>
+              <option value="san-diego">San Diego, CA, USA</option>
               <option value="other">Something else!</option>
             </select>
           </div>
@@ -578,7 +463,7 @@
           </div>
 
           <!-- Message -->
-          <div class="form-group full-width">
+          <div class="form-group">
             <label for="message">Your Message</label>
             <textarea id="message" name="message" placeholder="Tell me what's on your mind…" required></textarea>
           </div>
@@ -588,7 +473,6 @@
             <button type="submit">Send Message</button>
           </div>
 
-        </div><!-- /form-grid -->
       </form>
     </section>
 
@@ -600,16 +484,10 @@
   ============================================================ -->
   <footer>
     <!-- FILL IN: Replace [YEAR] and [YOUR BLOG NAME] -->
-    <p>&copy; <!-- [YEAR] --> <!-- [YOUR BLOG NAME] -->. All rights reserved.</p>
+    <p>&copy; 2026 <!-- [YOUR BLOG NAME] -->. All rights reserved.</p>
 
     <!-- FILL IN: Replace [Your Name] with your name -->
     <p>Written by <!-- [Your Name] --></p>
-
-    <!-- FILL IN: Replace the email address in the href and the link text -->
-    <p>
-      Get in touch:
-      <a href="mailto:<!-- youremail@example.com -->"><!-- youremail@example.com --></a>
-    </p>
   </footer>
 
 </body>
